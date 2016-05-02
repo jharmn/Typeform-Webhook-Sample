@@ -1,0 +1,17 @@
+---
+- config:
+    - testset: "Formconf API tests"
+
+- test:
+    - group: "Attendees"
+    - name: "Retrieve attendees"
+    - url: "/attendees"
+
+- test:
+    - group: "Attendees"
+    - name: "Typeform webhook"
+    - url: "/typeform-webhook"
+    - method: "POST"
+    - headers: {'Content-Type': 'application/json'}
+    - body: {"event_id":"YeR5SsvWn3","event_type":"form_response","form_response":{"form_id":"bnSpda","token":"73787623e7244f6a4415118a9d99d49e","submitted_at":"2016-04-29T15:26:31Z","answers":[{"type":"text","text":"Nope!","field":{"id":"21524214","type":"long_text"}},{"type":"text","text":"Mr Magoo","field":{"id":"21524209","type":"short_text"}},{"type":"url","url":"http://magoo.io","field":{"id":"21524210","type":"website"}},{"type":"choice","choice":{"label":"Social media"},"field":{"id":"21524211","type":"multiple_choice"}},{"type":"email","email":"mr@magoo.com","field":{"id":"21524212","type":"email"}},{"type":"choice","choice":{"label":"Yes"},"field":{"id":"21524213","type":"picture_choice"}}]}}
+    - body: '{"event_id":"YeR5SsvWn3","event_type":"form_response","form_response":{"form_id":"bnSpda","token":"73787623e7244f6a4415118a9d99d49e","submitted_at":"2016-04-29T15:26:31Z","answers":[{"type":"text","text":"Nope!","field":{"id":"21524214","type":"long_text"}},{"type":"text","text":"Mr Magoo","field":{"id":"21524209","type":"short_text"}},{"type":"url","url":"http://magoo.io","field":{"id":"21524210","type":"website"}},{"type":"choice","choice":{"label":"Social media"},"field":{"id":"21524211","type":"multiple_choice"}},{"type":"email","email":"mr@magoo.com","field":{"id":"21524212","type":"email"}},{"type":"choice","choice":{"label":"Yes"},"field":{"id":"21524213","type":"picture_choice"}}]}}'
